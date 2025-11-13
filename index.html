@@ -47,39 +47,40 @@
 
     /* COVER area: uses cover jpg as background, fades to bottom */
     .cover {
-      position:relative;
-      height:320px;
-      width:100%;
-      overflow:hidden;
-      border-top-left-radius:40px;
-      border-top-right-radius:40px;
-      background-position:center;
-      background-size:cover;
-      display:flex;
-      align-items:flex-end;
-      justify-content:flex-start;
-    }
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
 
-    /* overlay fade from top clear -> bottom transparent to sheet */
-    .cover::after{
-      content:"";
-      position:absolute;
-      left:0;right:0;top:0;height:100%;
-      background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.02) 30%, rgba(255,255,255,0.0) 58%, rgba(255,255,255,0.92) 100%);
-      pointer-events:none;
-      mix-blend-mode:normal;
-    }
+.cover-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(248,248,248,1), rgba(248,248,248,0));
+}
 
     /* profile circle sits overlapping cover and main content */
-    .profile-wrap{
-      position:relative;
-      width:100%;
-      display:flex;
-      justify-content:center;
-      transform:translateY(40px); /* lift it overlapping area */
-      z-index:6;
-      pointer-events:none;
-    }
+   .profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: relative;
+  margin-top: -75px;
+  z-index: 5;
+}
     .profile {
       width:170px;height:170px;
       border-radius:999px;
@@ -267,4 +268,5 @@
   </script>
 </body>
 </html>
+
 
