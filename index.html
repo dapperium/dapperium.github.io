@@ -1,272 +1,183 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sumit Jangra — dapperium</title>
-  <meta name="description" content="Sumit Jangra — Fashion content creator & tech enthusiast." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
   <style>
-    :root{
-      --bg-top: #e7d9c7; /* warm beige */
-      --bg-bottom: #d2bca7;
-      --muted: #6b6b73;
-      --accent: #121212;
-      --card: rgba(255,255,255,0.85);
-      --glass-border: rgba(255,255,255,0.6);
-      --radius: 30px;
-      --max-w: 1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      min-height:100vh;
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:28px;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      color:var(--accent);
+    /* ===== Body & Container ===== */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      scroll-behavior: smooth;
     }
 
-    /* container */
-    .sheet{
-      width:100%;
-      max-width:var(--max-w);
-      border-radius:40px;
-      overflow:visible;
-      background:linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.92));
-      box-shadow:0 28px 80px rgba(16,16,18,0.13);
-      border:1px solid rgba(255,255,255,0.6);
-      position:relative;
+    /* Background Gradient */
+    body {
+      background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+      color: #fff;
     }
 
-    /* COVER area: uses cover jpg as background, fades to bottom */
-    .cover {
-  position: relative;
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-}
-
-.cover-pic {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.85);
-}
-
-.cover::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 60%;
-  background: linear-gradient(to top, rgba(248,248,248,1), rgba(248,248,248,0));
-}
-
-    /* profile circle sits overlapping cover and main content */
- .profile {
-  display: flex;
-  justify-content: center;
-}
-
-.profile-pic {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  object-position: center; /* 👈 ye center karega image ko */
-  border-radius: 50%;
-  border: 4px solid white;
-  margin-top: -80px;
-  z-index: 10;
-  position: relative;
-  background: white;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* thoda depth look */
-}
-    .profile img{width:100%;height:100%;object-fit:cover;display:block}
-
-    .profile:hover{ transform: translateY(-6px) scale(1.02) }
-
-    /* main content */
-    .content{
-      padding:36px 48px 48px;
+    /* Center container */
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
     }
 
-    .name{
-      margin-top:12px;
-      text-align:center;
-      font-size:28px;font-weight:800; letter-spacing:-0.6px;
-    }
-    .titleline{
-      text-align:center;
-      margin-top:8px;
-      color:var(--muted);
-      font-weight:600;
-      font-size:14px;
-      letter-spacing:0.3px;
+    /* Profile photo */
+    #profilePhoto {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      transition: transform 0.3s;
     }
 
-    /* socials row */
-    .social-row{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      margin-top:14px;
-    }
-    .social-row a{
-      display:inline-flex;align-items:center;justify-content:center;
-      width:44px;height:44px;border-radius:10px;
-      background:rgba(255,255,255,0.9);
-      border:1px solid rgba(0,0,0,0.04);
-      text-decoration:none;color:var(--accent);
-      box-shadow:0 8px 22px rgba(10,10,12,0.06);
-      transition:transform .18s ease;
-    }
-    .social-row a:hover{ transform: translateY(-4px) }
-
-    /* skills chips */
-    .skills{
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      margin:20px 0 8px;
-      flex-wrap:wrap;
-    }
-    .chip{
-      padding:10px 14px;
-      border-radius:14px;
-      background:rgba(255,255,255,0.95);
-      box-shadow:0 8px 22px rgba(10,10,12,0.04);
-      font-weight:700;font-size:13px;border:1px solid rgba(0,0,0,0.03);
+    /* Hover effect */
+    #profilePhoto:hover {
+      transform: scale(1.1);
     }
 
-    /* About */
-    .about{
-      margin-top:18px;
-      max-width:880px;
-      margin-left:auto;margin-right:auto;
-      text-align:center;
-    }
-    .about h3{
-      margin:0;
-      font-size:20px;
-      font-weight:700;
-      letter-spacing:-0.2px;
-      margin-bottom:8px;
-    }
-    .about p{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.6;
-      letter-spacing:0.4px; /* minor gap between words/letters as requested */
-      max-width:760px;
-      margin-left:auto;margin-right:auto;
+    /* Name */
+    h1 {
+      margin: 20px 0 10px 0;
+      font-size: 2.5em;
     }
 
-    /* actions */
-    .actions{
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      margin-top:20px;
-      flex-wrap:wrap;
+    /* Subtitle */
+    p.subtitle {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      opacity: 0.8;
     }
-    .btn{
-      padding:11px 18px;border-radius:999px;font-weight:800;
-      text-decoration:none;display:inline-flex;align-items:center;gap:10px;
-      transition:transform .16s ease,box-shadow .16s ease;
+
+    /* Buttons */
+    .btn {
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 1em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s;
     }
-    .btn-primary{ background:#111;color:#fff;box-shadow:0 10px 30px rgba(17,17,17,0.16); }
-    .btn-ghost{ background:transparent;border:1px solid rgba(0,0,0,0.06); color:var(--accent); }
 
-    .btn:hover{ transform: translateY(-4px) }
+    .btn-primary {
+      background-color: #fff;
+      color: #2575fc;
+    }
 
-    /* footer small */
-    footer{ margin-top:28px; text-align:center; color:var(--muted); font-size:13px; padding-bottom:24px; }
+    .btn-primary:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.05);
+    }
 
-    /* responsive */
-    @media (max-width:880px){
-      .cover{height:260px}
-      .profile{ width:140px;height:140px;border-width:6px }
-      .content{ padding:26px 20px 36px }
-      .name{ font-size:22px }
-      .titleline{ font-size:13px }
-      .chip{ font-size:13px; padding:9px 12px }
-      .about h3{ font-size:18px }
-      .about p{ font-size:13px }
+    .btn-secondary {
+      background-color: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255,255,255,0.2);
+      transform: scale(1.05);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+    }
+
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media only screen and (max-width: 768px) {
+      #profilePhoto {
+        width: 140px;
+        height: 140px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      section h2 {
+        font-size: 1.5em;
+      }
+      section p {
+        font-size: 1em;
+      }
+      .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+      }
     }
   </style>
 </head>
 <body>
-<div class="cover">
-    <img src="images/cover.jpg" alt="Cover Image" class="cover-pic">
-  </div>
-  <div class="sheet" id="page">
-    <!-- COVER: background set by inline style so it's easy to replace -->
-    <div class="cover" id="cover" style="background-image: url('assets/cover.jpg');">
-      <!-- cover content is intentionally empty; profile overlaps below -->
-    </div>
 
-    <!-- Profile circle overlapping -->
-    <div class="profile-wrap">
-    <div class="profile">
-  <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
-</div>
-    </div>
+  <!-- Hero Section -->
+  <div class="container" id="home">
+    <img id="profilePhoto" src="images/profile.jpg" alt="profile photo">
+    <h1>Sumit</h1>
+    <p class="subtitle">Web Developer | Designer | Creator</p>
 
-    <!-- Main -->
-    <div class="content">
-      <div class="name">Sumit Jangra</div>
-      <div class="titleline">Fashion &amp; Styling  |  Modelling  |  Creative Tech Skills</div>
-
-      <div class="social-row" role="navigation" aria-label="social links">
-        <a href="https://instagram.com/dapper.ium" target="_blank" title="Instagram" aria-label="instagram">
-          <!-- IG icon -->
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#111" stroke-width="1.2"/><circle cx="12" cy="12" r="3.2" stroke="#111" stroke-width="1.2"/><path d="M17.6 6.4h.01" stroke="#111" stroke-width="1.2" stroke-linecap="round"/></svg>
-        </a>
-
-        <a href="https://www.youtube.com/@dapperium" target="_blank" title="YouTube" aria-label="youtube">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="6" width="20" height="12" rx="3" stroke="#111" stroke-width="1.2"/><path d="M10 9.3l5 3-5 3V9.3z" fill="#111"/></svg>
-        </a>
-
-        <a href="#" title="Facebook (add link later)" aria-label="facebook">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 3h2v4h-2c-1.1 0-1 .9-1 1v2h3l-.5 3H14v7h-3v-7H8v-3h3V8c0-3 1.6-5 4-5z" fill="#111"/></svg>
-        </a>
-      </div>
-
-      
-      <div class="about" role="article">
-        <h3>About</h3>
-        <p>I'm Sumit — a student who blends fashion and tech. I love creating looks, posing confidently in front of the camera, and making videos for Instagram &amp; YouTube. With styling skills and tech knowledge, I craft clean visual stories and I’m building toward my own apparel label.</p>
-      </div>
-
-      <div class="actions">
-        <a class="btn btn-primary" href="mailto:hello@dapperium.com">Email</a>
-        <a class="btn btn-ghost" href="https://wa.me/91" target="_blank">WhatsApp</a>
-      </div>
-
-      <footer>
-        © <strong>dapperium</strong> — Sumit Jangra
-      </footer>
+    <div>
+      <button class="btn btn-primary" id="showPhotoBtn">Show/Hide Photo</button>
+      <a href="#about" class="btn btn-secondary">About Me</a>
+      <a href="#contact" class="btn btn-secondary">Contact</a>
     </div>
   </div>
 
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hi! I'm Sumit, a passionate web developer who loves creating beautiful and functional websites.
+      I specialize in modern, responsive, and interactive designs that work across all devices.
+      I enjoy learning new technologies and improving my skills every day.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      You can reach me via email at <a href="mailto:sumit@example.com" style="color:#fff; text-decoration:underline;">sumit@example.com</a> or follow me on social media.
+      <br><br>
+      <a href="#" class="btn btn-primary">Instagram</a>
+      <a href="#" class="btn btn-primary">LinkedIn</a>
+      <a href="#" class="btn btn-primary">GitHub</a>
+    </p>
+  </section>
+
+  <!-- JS -->
   <script>
-    // small convenience: replace cover/profile with assets you upload
-    // no action required here; images are referenced as assets/cover.jpg and assets/profile.jpg
-    // copy-to-clipboard for email (optional)
-    // future: add small JS behaviors here
+    // Button click to toggle profile photo
+    document.getElementById('showPhotoBtn').addEventListener('click', function() {
+      var img = document.getElementById('profilePhoto');
+      if(img.style.display === 'none'){
+        img.style.display = 'block';
+      } else {
+        img.style.display = 'none';
+      }
+    });
   </script>
 </body>
 </html>
-
-
-
-
