@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D1HGML43LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D1HGML43LM');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reels — Dapperium</title>
+  <link rel="canonical" href="https://www.dapperium.com/reels.html">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="nav-glass">
+  <div class="nav-inner">
+    <div class="brand">Dapperium</div>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="modeling.html">Photos</a>
+      <a href="Buy.html">Buy</a>
+      <a class="active" href="reels.html">Reels</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-shell">
+  <section class="glass-card page-card">
+    <h1 class="page-title">Reels & Videos</h1>
+    <p class="page-text">Add your exported video file as <code>videos/video1.mp4</code> or embed from YouTube.</p>
+  </section>
+
+  <section class="reel-card">
+    <!-- local file example -->
+    <video src="videos/video1.mp4" controls playsinline></video>
+
+    <div class="actions-row">
+      <button class="like-btn" data-like-id="video1">♥ Like</button>
+      <span class="like-count" data-like-count="video1">0 likes</span>
+    </div>
+    <div class="comment-wrap" data-comments-id="video1">
+      <div class="comment-list"></div>
+      <form class="comment-form">
+        <input name="name" placeholder="Name (optional)">
+        <textarea name="text" placeholder="Drop a comment..."></textarea>
+        <button type="submit">Comment</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><p>© Dapperium — Sumit Jangra</p></footer>
+</body>
+</html>
