@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://www.dapperium.com/</loc>
+        <priority>1.00</priority>
+        <changefreq>daily</changefreq>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>https://www.dapperium.com/about.html</loc>
+        <priority>0.90</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <!-- Photos Page -->
+    <url>
+        <loc>https://www.dapperium.com/photos.html</loc>
+        <priority>0.95</priority>
+        <changefreq>daily</changefreq>
+    </url>
+
+    <!-- Reels Page -->
+    <url>
+        <loc>https://www.dapperium.com/reels.html</loc>
+        <priority>0.95</priority>
+        <changefreq>daily</changefreq>
+    </url>
+
+    <!-- Buy Page -->
+    <url>
+        <loc>https://www.dapperium.com/buy.html</loc>
+        <priority>0.70</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+
+    <!-- Contact Page -->
+    <url>
+        <loc>https://www.dapperium.com/contact.html</loc>
+        <priority>0.80</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+
+    <!-- Profile Photo -->
+    <url>
+        <loc>https://www.dapperium.com/images/profile.jpg</loc>
+        <priority>0.40</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+
+    <!-- Main Photos -->
+    <url>
+        <loc>https://www.dapperium.com/images/photo1.JPG</loc>
+    </url>
+    <url>
+        <loc>https://www.dapperium.com/images/photo2.JPG</loc>
+    </url>
+    <url>
+        <loc>https://www.dapperium.com/images/photo3.JPG</loc>
+    </url>
+    <url>
+        <loc>https://www.dapperium.com/images/photo4.JPG</loc>
+    </url>
+    <url>
+        <loc>https://www.dapperium.com/images/photo5.JPG</loc>
+    </url>
+    <url>
+        <loc>https://www.dapperium.com/images/photo6.JPG</loc>
+    </url>
+    <url>
+        <loc>https://www.dapperium.com/images/photo7.JPG</loc>
+    </url>
+    <url>
+        <loc>https://www.dapperium.com/images/photo8.JPG</loc>
+    </url>
+
+</urlset>
