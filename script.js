@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
         updateThemeIcon(currentTheme);
     });
 });
+<div class="mobile-toggle">☰</div>
+
 
 // change icon
 function updateThemeIcon(theme) {
@@ -166,3 +168,4 @@ document.querySelectorAll(".insta-slider").forEach((slider) => {
         setPostSlide(postId, activeIndex);
     });
 });
+
